@@ -26,9 +26,9 @@ module.exports = new Command({
         if (!searchResult || !searchResult.tracks.length)
             return message.channel.send({ embeds: [{ description: `No results found!`, color: 0xb84e44 }] });
 
-        const queue = await client.player.createQueue(message.guild,{ metadata: { channel: message.channel }, bufferingTimeout: 1000,
+        const queue = await client.player.createQueue(message.guild,{ metadata: { channel: message.channel },// bufferingTimeout: 1000,
             async onBeforeCreateStream(track, source, _queue) {
-                if (track.url.includes("youtube.com")) {
+                if (source === "youtube") {
                     return (await playdl.stream(track.url, { quality : 0 })).stream;
                 }
                 else {

@@ -1,3 +1,5 @@
+#### This branch uses a poorly modified version of discord-player with a few features removed such as inline volume controls and bufferingTimeout
+
 <div align="center">
   <p>
     <img src="https://nize.ph/gallery/dodongmedium.png" width="500" alt="Dodong" /></a>
@@ -46,7 +48,7 @@ npm init -y && npm i --save-dev node@16 && npm config set prefix=$(pwd)/node_mod
     bottoken: "BOT TOKEN HERE",
     geniusAPItoken: "GENIUS.COM CLIENT ACCESS TOKEN HERE"
     ```
-5. Run the bot
+5. Compile discord-player and run the bot
     ```sh
-    node index.js
+    npm start
     ```
